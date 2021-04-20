@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Testwebsite by barchewe</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">Carolin</a>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>    
+        </header>
+        <section>
+            <img src="stars.png" id="stars">
+            <img src="moon.png" id="moon">
+            <img src="mountains_behind.png" id="mountains_behind">
+            <h2 id="text">Grothconsult</h2>
+            <a href="#" id="btn">Explore</a>
+            <img src="mountains_front.png" id="mountains_front">  
+        </section>
+        <div class="sec" id="sec">
+            <h2>Beispieltext</h2>
+            <p>Kapitän Zukunft
+                von Lukas Böhl
+                Eines Abends saß ich auf der Parkbank am Dorfrand und sah hinauf in den Himmel. Ich wünschte
+                mich zu ihnen, dort hoch, weit weg von all dem. Weder der Alkohol, noch das Fernsehen, noch
+                meine Arbeit hatten mich von meiner pressenden Ungeduld ablenken können. Diese Dinge
+                können die Zeit verkürzen oder sie dehnen oder sie einen vergessen lassen, aber was sie nicht
+                können, ist, die Zukunft vorwegzunehmen.
+                Ich hielt es nicht aus, nicht zu wissen, wer ich in 30 oder 40 Jahren sein würde. Von all den
+                Problemen, mit denen sich die Menschheit in den letzten 100.000 Jahren an den Nachthimmel
+                gewandt hatte, war meines wahrscheinlich irgendwo in der Mitte. Nicht dringend genug, um eine
+                Lösung in Form einer Eingebung zu provozieren.<br><br>
+                </p>
+        </div>
+        
+        <script>
+            let stars = document.getElementById("stars");
+            let moon = document.getElementById("moon");
+            let mountains_behind = document.getElementById("mountains_behind");
+            let text = document.getElementById("text");
+            let btn = document.getElementById("btn");
+            let mountains_front = document.getElementById("mountains_front");
+            let header = document.querySelector('header');
+
+            window.addEventListener('scroll',function(){
+                let value = window.scrollY;
+                stars.style.left = value + 0.25 +"px";
+                moon.style.top = value * 1.05 + "px";
+                mountains_behind.style.top = value * 0.5 + "px";
+                mountains_front.style.top = value * 0 + "px";
+                text.style.marginRight = value * 4 + "px";
+                text.style.marginTop = value * 1.5 + "px";
+                btn.style.marginTop = value * 1.5 + "px";
+                header.style.top = value * 0.5 + "px";    
+            })
+
+        </script>
+    </body>
+</html>
